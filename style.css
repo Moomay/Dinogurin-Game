@@ -1,0 +1,47 @@
+div{
+  margin: 0em;
+  padding: 0em;
+}
+body{
+  margin: 0px;
+}
+.main-container {
+    margin: auto;
+    height: 100%;
+    position: relative;
+    background-color: hsl(100, 50%, 50%);
+    z-index: -1;
+}
+.content {
+    margin: auto;
+    max-width: 800px;
+    min-width: 320px;
+    width: 100%;
+    background-color: hsl(50, 50%, 50%);
+    display: block;
+    text-align: center;
+    z-index: -1;
+}
+.col {
+  width: 19%;
+  background: hsl(250, 50%, 50%);
+  display: inline-block;
+  max-width: 812px;
+  height: 90vh;
+  z-index: -1;
+}
+.col-ch {
+  width: 19%;
+  background: hsl(320, 50%, 50%);
+  display: inline-block;
+  max-width: 812px;
+  height: 10vh;
+  z-index: -1;
+}
+.score{
+  display: block;
+  position: fixed;
+  font-size: 3em;
+  left: 5vh;
+  top: 0vh;
+}
