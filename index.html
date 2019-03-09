@@ -6,6 +6,7 @@
 <style type="text/css">
 	body{
 		    background-color: rgb(235, 235, 235);
+		    overflow: visible;
 	}
 	#logo{
 		width: 150px;
@@ -23,13 +24,60 @@
 		background-color: rgb(129,241,129);
 		margin:auto;
 	}
+	#block3{
+		width: 1000px;
+		height: 600px;
+		background-color: rgb(203,203,203);
+		margin:auto;
+
+	}
+	.footer{
+		background-color: rgb(129,241,129);
+		padding: 100px;
+		margin-top: 100px;
+	}
+	ul {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  	background-color: #333;
+  	position: -webkit-sticky; /* Safari */
+ 	position: sticky;
+ 	top: 0;
+	}
+	li a {
+  	display: block;
+  	color: white;
+  	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+  	}
+  	li {
+ 	 float: left;
+	}
+	li a:hover {
+  	background-color: #111;
+	}
+	.active {
+  	background-color: rgb(129,241,129);
+	}
 
 
 </style>
 <body>
 	<img id="logo" src="logohead.png">
+	<ul>
+  <li><a href="#block1">Play</a></li>
+  <li><a href="#block2">How to play</a></li>
+  <li><a href="#block3">LeaderBoard</a></li>
+</ul>
 	<div id="block1"></div>
 	<div id="block2"></div>
+	<div id="block3"></div>
+
+	
+	<div class="footer"></div>
 
 </body>
 </html>
