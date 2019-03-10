@@ -1,0 +1,99 @@
+div{
+  margin: 0em;
+  padding: 0em;
+}
+
+body{
+  margin: 0px;
+  font-size: 0em;
+}
+
+.main-container {
+    margin: auto;
+    height: 100%;
+    position: relative;
+    background-color: hsl(100, 100%, 90%);
+    z-index: -1;
+}
+
+.content {
+    margin: auto;
+    max-width: 800px;
+    min-width: 320px;
+    width: 100%;
+    background-color: hsl(50, 50%, 50%);
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.col {
+  width: 20%;
+  background: hsl(190, 100%, 82%);
+  display: inline-block;
+  max-width: 812px;
+  height: 90vh;
+  z-index: -1;
+}
+
+.col:nth-child(2n) {
+  width: 20%;
+  background: hsl(81, 100%, 82%);
+  display: inline-block;
+  max-width: 812px;
+  height: 90vh;
+  z-index: -1;
+}
+
+.col-ch {
+  width: 20%;
+  background: hsl(150, 100%, 83%);
+  display: inline-block;
+  max-width: 812px;
+  height: 10vh;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 2s;
+}
+
+.col-ch:nth-child(2n) {
+  width: 20%;
+  background: hsl(240, 100%, 83%);
+  display: inline-block;
+  max-width: 812px;
+  height: 10vh;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 2s;
+}
+
+.score{
+  display: block;
+  position: fixed;
+  font-size: 3em;
+  left: 5vh;
+  top: 0vh;
+}
+#dino{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: 90%;
+  background-image:url('dino.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  transition: 0.45s;
+  z-index: 1;
+}
+div[x="0"]{--x:0%;}
+div[x="1"]{--x:20%;}
+div[x="2"]{--x:40%;}
+div[x="3"]{--x:60%;}
+div[x="4"]{--x:80%;}
