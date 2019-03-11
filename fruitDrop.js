@@ -4,7 +4,7 @@ function fDrop(x){
 	y += 1;
 	//var position = document.querySelector('#fruit[x]');
 	document.querySelector('#fruit').setAttribute('y',y);
-	if (y >= 10){
+	if (y == 10){
 		clearInterval(fdrop);
 	}
 	console.log(y);
