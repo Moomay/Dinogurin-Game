@@ -88,12 +88,46 @@ body{
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  position:absolute;
+  position: absolute;
   transition: 0.45s;
-  z-index: 1;
+  z-index: 2;
 }
+/*possition left*/
 div[x="0"]{--x:0%;}
 div[x="1"]{--x:20%;}
 div[x="2"]{--x:40%;}
 div[x="3"]{--x:60%;}
 div[x="4"]{--x:80%;}
+
+div[y="0"]{--y:0%;}
+div[y="1"]{--y:10%;}
+div[y="2"]{--y:20%;}
+div[y="3"]{--y:30%;}
+div[y="4"]{--y:40%;}
+div[y="5"]{--y:50%;}
+div[y="6"]{--y:60%;}
+div[y="7"]{--y:70%;}
+div[y="8"]{--y:80%;}
+div[y="9"]{--y:90%;}
+div[y="10"]{display: none;}
+
+div[display="none"]{
+  display: none;
+}
+#fruit{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: var(--y);
+  background-image:url('manu.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  transition: 1.5s all;
+  z-index: 1;
+  border-radius: 100%;
+}
+
+
