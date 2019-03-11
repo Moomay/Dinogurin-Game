@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="myFunction()">Prompt</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  	var score = Number(prompt("Please enter your score"));
+  	hs1 = localStorage.getItem('hs1') || 0;
+  	hs2 = localStorage.getItem('hs2') || 0;
+  	hs3 = localStorage.getItem('hs3') || 0;
+  	hs4 = localStorage.getItem('hs4') || 0;
+  	hs5 = localStorage.getItem('hs5') || 0;
+
+  	if(score>=hs1){
+  		localStorage.setItem('hs1', score);
+     	localStorage.setItem('hs2', hs1);
+     	localStorage.setItem('hs3', hs2);
+     	localStorage.setItem('hs4', hs3);
+     	localStorage.setItem('hs5', hs4);
+  	}
+  	else if(score>=hs2){
+  		localStorage.setItem('hs2', score);
+     	localStorage.setItem('hs3', hs2);
+     	localStorage.setItem('hs4', hs3);
+     	localStorage.setItem('hs5', hs4);
+  	}
+  	else if(score>=hs3){
+  		localStorage.setItem('hs3', score);
+     	localStorage.setItem('hs4', hs3);
+     	localStorage.setItem('hs5', hs4);
+  	}
+  	else if(score>=hs4){
+  		localStorage.setItem('hs4', score);
+     	localStorage.setItem('hs5', hs4);
+  	}
+  	else if(score>=hs5){
+  		localStorage.setItem('hs5', score);
+  	}
+
+  	hs1 = localStorage.getItem('hs1');
+  	hs2 = localStorage.getItem('hs2');
+  	hs3 = localStorage.getItem('hs3');
+  	hs4 = localStorage.getItem('hs4');
+  	hs5 = localStorage.getItem('hs5');
+
+  	if (score != null) {
+    	document.getElementById("demo").innerHTML = "Your Score :" + score + "<br>" + "Highscore :" + hs1
+    	+ "<br>" + "Highscore :" + hs2 +"<br>" + "Highscore :" + hs3 + "<br>" + "Highscore :" + hs4
+    	+ "<br>" + "Highscore :" + hs5;
+  	}
+  	if (score == -9){
+  		localStorage.clear();
+  	}
+}
+</script>
+
+</body>
+</html>
