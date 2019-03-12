@@ -2,13 +2,14 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=0.6, minimum-scale=0.6">
+  <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 	<title>Dino Gurin</title>
 </head>
 <style type="text/css">
 	body{
 		    background-color: rgb(235, 235, 235);
 		    margin:0px;
-		    font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Kanit', sans-serif;
 	}
 
 	.header {
@@ -61,6 +62,18 @@
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
+ ol.list{
+    list-style-type: square;
+    margin-left:50px;
+    font-size: 40px;
+    animation: animatezoom 3s;
+   
+  }
+
+   @keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
 
 	#block2{
 		width: 80vw;
@@ -70,6 +83,28 @@
     box-shadow: 1px 3px 20px 0px rgb(95, 93, 93);
     animation: animatezoom 1s
 	}
+  @keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+
+  }
+
+  #block2img{
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.50;
+
+  }
+  #text1{
+    margin: 0px;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 70px;
+    animation: animatezoom 3s
+  }
   @keyframes animatezoom {
   from {transform: scale(0)} 
   to {transform: scale(1)}
@@ -170,6 +205,7 @@ button {
 @keyframes animatezoom {
   from {transform: scale(0)} 
   to {transform: scale(1)}
+}
 
 button:hover {
   opacity: 0.1r;
@@ -203,23 +239,23 @@ span.psw {
   padding-top: 16px;
 }
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
   padding-top: 70px;
 }
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 .close {
   position: absolute;
@@ -246,7 +282,6 @@ span.psw {
   to {transform: scale(1)}
 }
 
-/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
      display: block;
@@ -267,9 +302,16 @@ span.psw {
   <li><a href="#block2">How to play</a></li>
   <li><a href="#block3">LeaderBoards</a></li>
 </ul>
-	<div id="block1"><img id="block1img" src="block1.jpg"></div>
+	<div id="block1"><img id="block1img" src="block1.jpg"><div id="text1"><b>How to play</b></div><ol class="list">
+      <li>กดปุ่มลูกศรบนคีย์บอร์ด ซ้าย ขวา หรือทัชที่ตําแหน่งบล๊อกเพื่อบังคับไดโนเสาร์</li>
+      <li>บังคับให้ไดโนเสาร์กินเนื้อที่กำลังหล่นลงมาจากฟ้า</li>
+      <li>พยายามหลบเลี้ยงสิ่งที่ไม่ใช่เนื้อ เช่น อุกกาบาต</li>
+      <li>พยายามสะสมคะแนนจากการกินเนื้อ</li>
+      <li>ไดโนเสาร์มีพลังชีวิตอยู่สามหน่วย หากโดนอุกกาบาตพลังชีวิตจะลดลง 1 หน่วย</li>
+      <li>เกมจะจบเมื่อพลังชีวิตของไดโนเสาร์หมด</li>
+    </ol></div>
   <img id="dinoal" src="dinoAlpha.png">
-	<div id="block2"></div>
+	<div id="block2"> <img id="block2img" src="block2.png"></div>
 	<div id="block3"></div>
 
 
