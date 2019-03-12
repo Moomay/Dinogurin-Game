@@ -1,19 +1,18 @@
 div{
   margin: 0em;
-  padding: 0em;
 }
 
 body{
   margin: 0px;
-  font-size: 0em;
 }
 
 .main-container {
+    font-size: 0em;
     margin: auto;
-    height: 100%;
+    height: 100vh;
     position: relative;
     background-color: hsl(100, 100%, 90%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .content {
@@ -25,7 +24,7 @@ body{
     display: block;
     text-align: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .col {
@@ -72,13 +71,6 @@ body{
   transition: 2s;
 }
 
-.score{
-  display: block;
-  position: fixed;
-  font-size: 3em;
-  left: 5vh;
-  top: 0vh;
-}
 #dino{
   display: fixed;
   width: 20%;
@@ -110,7 +102,7 @@ div[y="6"]{--y:60%;}
 div[y="7"]{--y:70%;}
 div[y="8"]{--y:80%;}
 div[y="9"]{--y:90%;}
-div[y="10"]{--y:100%;}
+div[y="10"]{display: none;}
 
 div[display="none"]{
   display: none;
@@ -163,4 +155,12 @@ div[display="none"]{
   transition: 1.5s all;
   z-index: 1;
   border-radius: 100%;
+}
+#score {
+  font-size: 3.6em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 0%;
+  left: 10%;
 }
