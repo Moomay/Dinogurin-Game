@@ -13,7 +13,7 @@ body{
     height: 100%;
     position: relative;
     background-color: hsl(100, 100%, 90%);
-    z-index: -1;
+    z-index: 1;
 }
 
 .content {
@@ -25,6 +25,7 @@ body{
     display: block;
     text-align: center;
     position: relative;
+    z-index: 1;
 }
 
 .col {
@@ -90,7 +91,7 @@ body{
   background-position: center;
   position: absolute;
   transition: 0.45s;
-  z-index: 2;
+  z-index: 1;
 }
 /*possition left*/
 div[x="0"]{--x:0%;}
@@ -98,7 +99,7 @@ div[x="1"]{--x:20%;}
 div[x="2"]{--x:40%;}
 div[x="3"]{--x:60%;}
 div[x="4"]{--x:80%;}
-
+div[y="-1"]{--y:-10%;}
 div[y="0"]{--y:0%;}
 div[y="1"]{--y:10%;}
 div[y="2"]{--y:20%;}
@@ -130,4 +131,21 @@ div[display="none"]{
   border-radius: 100%;
 }
 
-
+#conl{
+  display: fixed;
+  z-index: 4;
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  background: none;
+}
+#conr{
+  display: fixed;
+  z-index: 4;
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  background: none;
+}
