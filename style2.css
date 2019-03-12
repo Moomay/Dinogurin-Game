@@ -156,11 +156,30 @@ div[display="none"]{
   z-index: 1;
   border-radius: 100%;
 }
-#score {
-  font-size: 3.6em;
+#name{
+  font-size: 3em;
   position: absolute;
   display: fixed;
   z-index: 3;
-  top: 0%;
-  left: 10%;
+  top: 3%;
+  left: 2%;
+}
+#score {
+  font-size: 3em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 10%;
+  left: 2%;
+}
+#highscore {
+  font-size: 3em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 17%;
+  left: 4.3%;
+}
+span{
+  font-size: 1em;
 }

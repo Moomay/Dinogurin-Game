@@ -35,7 +35,14 @@
 		background-color: rgb(203,203,203);
 		margin:auto;
 		margin-top: 0px;
-    
+    box-shadow: 1px 3px 20px 0px rgb(95, 93, 93);
+    animation: animatezoom 1s
+  }
+
+    @keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+
 	}
 	#block1img{
 		height: 100%;
@@ -48,22 +55,39 @@
     top: 50%;
     left: 40%;
     height:35vh;
-
+    animation: animatezoom 1s
   }
+  @keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
 
 	#block2{
 		width: 80vw;
 		height: 100vh;
 		background-color: rgb(129,241,129);
 		margin:auto;
+    box-shadow: 1px 3px 20px 0px rgb(95, 93, 93);
+    animation: animatezoom 1s
 	}
+  @keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+
+  }
 
 	#block3{
 		width: 80vw;
 		height: 100vh;
 		background-color: rgb(203,203,203);
 		margin:auto;
+    box-shadow: 1px 3px 20px 0px rgb(95, 93, 93);
+    animation: animatezoom 1s
 	}
+  @keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+  }
 
 	.footer{
 		background-color: rgb(129,241,129);
@@ -140,8 +164,12 @@ button {
   border: none;
   cursor: pointer;
   width: 20%;
-  border-radius: 10px; 
+  border-radius: 10px;
+  animation: animatezoom 1s 
 }
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
 
 button:hover {
   opacity: 0.1r;

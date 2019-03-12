@@ -27,6 +27,7 @@ function ready_go() {
         if (posit_y >= 9 && posit_y <= 10 && status == 1){
           if (posit_x ==  document.getElementById("dino").getAttribute("x")){
             score += 1;
+            document.getElementById("score").innerHTML = "SCORE:"+score;
             console.log("dino hit");
             console.log("this score:"+score);
             remove(temp);
