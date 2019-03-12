@@ -110,7 +110,7 @@ div[y="6"]{--y:60%;}
 div[y="7"]{--y:70%;}
 div[y="8"]{--y:80%;}
 div[y="9"]{--y:90%;}
-div[y="10"]{display: none;}
+div[y="10"]{--y:100%;}
 
 div[display="none"]{
   display: none;
@@ -148,4 +148,19 @@ div[display="none"]{
   left: 50%;
   top: 0%;
   background: none;
+}
+.fruit{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: var(--y);
+  background-image:url('manu.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  transition: 1.5s all;
+  z-index: 1;
+  border-radius: 100%;
 }
