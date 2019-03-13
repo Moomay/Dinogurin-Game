@@ -148,7 +148,6 @@ div[display="none"]{
   height:10%;
   left: var(--x);
   top: var(--y);
-  background-image:url('manu.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -183,4 +182,27 @@ div[display="none"]{
 }
 span{
   font-size: 1em;
+}
+#hp{
+  font-size: 3.6em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 30%;
+  left: 10%;
+}
+.meteor{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: var(--y);
+  background-image:url('meteor.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  transition: 1.5s all;
+  z-index: 1;
+  border-radius: 100%;
 }
