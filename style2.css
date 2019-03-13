@@ -148,6 +148,7 @@ div[display="none"]{
   height:10%;
   left: var(--x);
   top: var(--y);
+  background: img('https://firebasestorage.googleapis.com/v0/b/dinogurin.appspot.com/o/meat1.png?alt=media&token=85187fbf-7f71-453d-80ec-05b6c6758b46');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
