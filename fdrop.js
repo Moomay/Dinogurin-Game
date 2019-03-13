@@ -18,34 +18,33 @@ function ready_go() {
   	
   	//drop meat
     var temp = count;
-  	dorp_meat(meat ,temp, posXMeat, posYMeat);
-  	function dorp_meat(meat, para, posit_x, posit_y){
+    var iscount = 1;
+    dorp_meat(meat ,temp, posXMeat, posYMeat, iscount);
+    function dorp_meat(meat, para, posit_x, posit_y, is_count){
       setTimeout(function dorp(){
         var status = 1;
         posit_y += 1;
         //check hit
-        if (posit_y >= 9 && posit_y <= 10 && status == 1){
+        if (posit_y >= 9 && posit_y <= 10 && status == 1 && is_count == 1){
           if (posit_x ==  document.getElementById("dino").getAttribute("x")){
             score += 1;
             document.getElementById("score").innerHTML = "SCORE:"+score;
             console.log("dino hit");
-            console.log("this score:"+score);
-            remove(temp);
-            status = 0;
-
+            console.log("this score: "+score);
+            is_count = 0;
           }
         }
-		    meat.setAttribute("y", posit_y);
+        meat.setAttribute("y", posit_y);
         // recursive
-		    if (posit_y <= 10 && status == 1){
-			   dorp_meat(meat, para, posit_x , posit_y);
-		    }
+        if (posit_y <= 10 && status == 1){
+         dorp_meat(meat, para, posit_x , posit_y, is_count);
+        }
         // remove when out screen
-		    if (posit_y > 10 && status == 1){
-			   remove(temp);
+        if (posit_y == 10){
+         remove(temp);
          status = 0;
-		}
-	}, delay);
+    }
+  }, delay);
   }
 
 	//count id +1
