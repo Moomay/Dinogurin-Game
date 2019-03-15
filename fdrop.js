@@ -15,7 +15,7 @@ function ready_go() {
   	var posYMeat = -1;
   	meat = document.createElement('div');
   	meat.setAttribute("id", count);
-    if (rate >= 80){
+    if (rate >= 30){
   	 meat.setAttribute("class", "fruit");
     }
     else {
@@ -80,4 +80,3 @@ function ready_go() {
   }
 }
 //เผื่อเพื่อนอยากทำ count down
-ready_go();
