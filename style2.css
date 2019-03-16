@@ -4,7 +4,6 @@ div{
 
 body{
   margin: 0px;
-  font-family: 'Kanit', sans-serif;
 }
 
 .main-container {
@@ -78,7 +77,7 @@ body{
   height:10%;
   left: var(--x);
   top: 90%;
-  background-image:url('https://firebasestorage.googleapis.com/v0/b/dinogurin.appspot.com/o/dino.png?alt=media&token=480a68c3-e0c7-48b7-bee7-375240b7d8c7');
+  background-image:url('dino.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -104,6 +103,15 @@ div[y="7"]{--y:70%;}
 div[y="8"]{--y:80%;}
 div[y="9"]{--y:90%;}
 div[y="10"]{display: none;}
+div[hit="meteor"]{
+  filter: drop-shadow(3em -3em 3em red) hue-rotate(30deg) brightness(90%) sepia(40%);
+}
+div[hit="immortal"]{
+  filter: sepia(1) hue-rotate(313deg) brightness(25%) saturate(1000%);
+}
+div[hit="none"]{
+  filter: none;
+}
 
 div[display="none"]{
   display: none;
@@ -148,7 +156,7 @@ div[display="none"]{
   height:10%;
   left: var(--x);
   top: var(--y);
-  background: img('meat.png');
+  background-image:url('meat.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -157,32 +165,22 @@ div[display="none"]{
   z-index: 1;
   border-radius: 100%;
 }
-#name{
-  font-size: 3em;
-  position: absolute;
-  display: fixed;
-  z-index: 3;
-  top: 3%;
-  left: 2%;
-}
+
 #score {
-  font-size: 3em;
+  font-size: 3.6em;
   position: absolute;
   display: fixed;
   z-index: 3;
   top: 10%;
-  left: 2%;
+  left: 10%;
 }
-#highscore {
-  font-size: 3em;
+#name{
+  font-size: 3.6em;
   position: absolute;
   display: fixed;
   z-index: 3;
-  top: 17%;
-  left: 4.3%;
-}
-span{
-  font-size: 1em;
+  top: 0%;
+  left: 10%;
 }
 #hp{
   font-size: 3.6em;
