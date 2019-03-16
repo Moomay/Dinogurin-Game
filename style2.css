@@ -1,0 +1,209 @@
+div{
+  margin: 0em;
+}
+
+body{
+  margin: 0px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.main-container {
+    font-size: 0em;
+    margin: auto;
+    height: 100vh;
+    position: relative;
+    background-color: hsl(100, 100%, 90%);
+    z-index: 2;
+}
+
+.content {
+    margin: auto;
+    max-width: 800px;
+    min-width: 320px;
+    width: 100%;
+    background-color: hsl(50, 50%, 50%);
+    display: block;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.col {
+  width: 20%;
+  background: hsl(190, 100%, 82%);
+  display: inline-block;
+  max-width: 812px;
+  height: 90vh;
+  z-index: -1;
+}
+
+.col:nth-child(2n) {
+  width: 20%;
+  background: hsl(81, 100%, 82%);
+  display: inline-block;
+  max-width: 812px;
+  height: 90vh;
+  z-index: -1;
+}
+
+.col-ch {
+  width: 20%;
+  background: hsl(150, 100%, 83%);
+  display: inline-block;
+  max-width: 812px;
+  height: 10vh;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 2s;
+}
+
+.col-ch:nth-child(2n) {
+  width: 20%;
+  background: hsl(240, 100%, 83%);
+  display: inline-block;
+  max-width: 812px;
+  height: 10vh;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 2s;
+}
+
+#dino{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: 90%;
+  background-image:url('https://firebasestorage.googleapis.com/v0/b/dinogurin.appspot.com/o/dino.png?alt=media&token=480a68c3-e0c7-48b7-bee7-375240b7d8c7');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  transition: 0.45s;
+  z-index: 1;
+}
+/*possition left*/
+div[x="0"]{--x:0%;}
+div[x="1"]{--x:20%;}
+div[x="2"]{--x:40%;}
+div[x="3"]{--x:60%;}
+div[x="4"]{--x:80%;}
+div[y="-1"]{--y:-10%;}
+div[y="0"]{--y:0%;}
+div[y="1"]{--y:10%;}
+div[y="2"]{--y:20%;}
+div[y="3"]{--y:30%;}
+div[y="4"]{--y:40%;}
+div[y="5"]{--y:50%;}
+div[y="6"]{--y:60%;}
+div[y="7"]{--y:70%;}
+div[y="8"]{--y:80%;}
+div[y="9"]{--y:90%;}
+div[y="10"]{display: none;}
+
+div[display="none"]{
+  display: none;
+}
+#fruit{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: var(--y);
+  background-image:url('meat.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  transition: 1.5s all;
+  z-index: 1;
+  border-radius: 100%;
+}
+
+#conl{
+  display: fixed;
+  z-index: 4;
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  background: none;
+}
+#conr{
+  display: fixed;
+  z-index: 4;
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  background: none;
+}
+.fruit{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: var(--y);
+  background: img('meat.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  transition: 1.5s all;
+  z-index: 1;
+  border-radius: 100%;
+}
+#name{
+  font-size: 3em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 3%;
+  left: 2%;
+}
+#score {
+  font-size: 3em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 10%;
+  left: 2%;
+}
+#highscore {
+  font-size: 3em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 17%;
+  left: 4.3%;
+}
+span{
+  font-size: 1em;
+}
+#hp{
+  font-size: 3.6em;
+  position: absolute;
+  display: fixed;
+  z-index: 3;
+  top: 30%;
+  left: 10%;
+}
+.meteor{
+  display: fixed;
+  width: 20%;
+  height:10%;
+  left: var(--x);
+  top: var(--y);
+  background-image:url('meteor.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  transition: 1.5s all;
+  z-index: 1;
+  border-radius: 100%;
+}
