@@ -1,15 +1,35 @@
-var score = 0;
-var hp = 5;// hp เริ่มต้น
-var mulscore = 1; // เมื่อจบการทำงานให้เป็น 0 score และ hp จะไม่เปลี่ยนแปลง
 console.log(document.getElementById("dino").getAttribute("x"));
+var config = {
+    apiKey: "AIzaSyCUHQjWzjaNnAWZFDESs27rEg0D1_p1nfw",
+    authDomain: "dinogu-29338.firebaseapp.com",
+    databaseURL: "https://dinogu-29338.firebaseio.com",
+    projectId: "dinogu-29338",
+    storageBucket: "dinogu-29338.appspot.com",
+    messagingSenderId: "858692298345"
+  };
+  firebase.initializeApp(config);
 function ready_go() {
+  //set up page
+  document.getElementById("dino").setAttribute("hit", "none");
+  document.getElementById("score").innerHTML = "SCORE: 0";
+  document.getElementById("hp").innerHTML = "HP: 5";
+  document.getElementById("score_push").style.display = "none";
+  document.getElementById("input").style.display = "none";
+  var mulscore = 1; // เมื่อจบการทำงานให้เป็น 0 score และ hp จะไม่เปลี่ยนแปลง
+  var score = 0;
+  var hp = 5;// hp เริ่มต้น
   var count = 0; // คือ ID ที่ค่าจะเพิ่มไปเรื่อยๆ ในทุกๆ loop ทีละ 1
   //random_on();
   var delay_drop = 1000; //set ความเร็วในการ drop
   var delay_spawn = 1000; //set ความเร็วในการ spawn
   var spawn = setInterval(random_on, delay_spawn); //สร้างการดรอป
+  
+
+  var database = firebase.database();
+  var ref = database.ref('score');
+  var end = 0; //ป้องกันการนับซ้ำซ้อน
   function random_on(){
-    //create Element with 
+    //create Element with
     var rate = Math.floor(Math.random() * 100); // random rate เนื้อหรืออุกกาบาต
     var posXMeat = Math.floor(Math.random() * 5); //random แกน x
     var posYMeat = -1; // แกน y เริ่มต้น
@@ -29,7 +49,6 @@ function ready_go() {
     meat.setAttribute("y", posYMeat);
     meat.setAttribute("x", posXMeat);
     document.getElementById("content").appendChild(meat);
-    
     
     var temp = count;// ID ที่
     var iscount = 1; // เซ็คการนับซ้ำซ้อน
@@ -77,10 +96,19 @@ function ready_go() {
                 console.log("HP -1");
                 document.getElementById("hp").innerHTML = "HP: "+hp; //update HP
                 //เช็คเลือด ถ้าเป็น 0 หยุดเกมส์ HP Check
-                if (hp == 0){
+                if (hp == 0 && end == 0){
+                  end = 1;
+                  console.log(score);
+                  //push ขึ้น firebase ครับ
+                  var data = {
+                    name: pname,
+                    score: score
+                  }
+                  ref.push(data);
                   console.log("Game End");
                   mulscore = 0; //หยุดเพิ่มค่า
                   clearInterval(spawn);//clear การ spawn}
+                  document.getElementById("score_push").style.display = "flex";
                 }
               }
             }
@@ -89,7 +117,7 @@ function ready_go() {
           
         } // if เช็ครอบ
         //คืนค่าสถานะ
-        if (is_im == 1 && con == 1){
+        if (is_im == 1 && con == 1 ){
           is_im = 0;
           document.getElementById("dino").setAttribute("hit", "none");
         }
@@ -97,11 +125,11 @@ function ready_go() {
         //ของตกลงมาก็เซตค่า y เปลี่ยนไป
         document.getElementById(para).setAttribute("y", posit_y);
         // recursive ในการ
-        if (posit_y <= 10 && status == 1){
+        if (posit_y <= 10 && status == 1 && end != 1){
          drop_meat(is_im, para, posit_x, posit_y, is_count);
         }
         // remove when out screen ออกไปจากจอเรานะ
-        if (posit_y == 11){
+        if (posit_y == 11 || end == 1){
          remove(para); //para คือ id
          status = 0; //หยุดนะ
         }

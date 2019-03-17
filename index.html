@@ -65,7 +65,7 @@
  ol.list{
     list-style-type: square;
     margin-left:50px;
-    font-size: 40px;
+    font-size: 2.2em;
     animation: animatezoom 3s;
    
   }
@@ -102,7 +102,7 @@
     display: block;
     position: relative;
     text-align: center;
-    font-size: 70px;
+    font-size: 3em;
     animation: animatezoom 3s
   }
   @keyframes animatezoom {
@@ -112,30 +112,45 @@
   }
 
 	#block3{
+    position: relative;
 		width: 80vw;
 		height: 100vh;
 		background-color: rgb(203,203,203);
 		margin:auto;
     box-shadow: 1px 3px 20px 0px rgb(95, 93, 93);
-    animation: animatezoom 1s
+    animation: animatezoom 1s;
 	}
+  #scoreboardz{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  #scoreboardz > div{
+    height: 10%;
+    font-size: 2em;
+    width: 100%;
+    background: hsl(131, 25%, 49%);
+  }
+  #scoreboardz > div:nth-child(2n){
+    background: hsl(110, 100%, 77%);
+  }
   @keyframes animatezoom {
   from {transform: scale(0)} 
   to {transform: scale(1)}
   }
 
 	.footer{
-    background-color: rgb(129,241,129);
+		background-color: rgb(129,241,129);
     padding: 100px;
     margin-top: 100px;
     font-style: oblique;
     color:white;
-    background-image: url("dino.png");
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/dinogu-29338.appspot.com/o/dino.png?alt=media&token=e29a7b65-a471-4531-b371-a3a692fc861a");
     background-repeat: no-repeat;
     background-position: right top;
     margin-right: 80px;
     font-size: 140%;
-  }
+	}
 
 	ul {
   	list-style-type: none;
@@ -169,7 +184,7 @@
 
   h1{
     margin: 0px;
-    background-image: url('wild.png');
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/dinogu-29338.appspot.com/o/wild.png?alt=media&token=b01398bb-d7c1-4353-aa75-9d2cb3d2a5be');
     background-repeat: no-repeat;
     background-position: bottom;
 
@@ -298,13 +313,15 @@ span.psw {
      width: 100%;
   }
 }
-
+.showfixed{
+  z-index: 2;
+}
 </style>
 <body>
 	<div class="header">
   	<h1><img id="logo" src="https://firebasestorage.googleapis.com/v0/b/dinogurin.appspot.com/o/logohead.png?alt=media&token=a5e6f094-c012-4fc3-b81e-1d5ef2cc0832"></h1>
 	</div>
-	<ul>
+	<ul class ="showfixed">
   <li><a href="#block1">Play</a></li>
   <li><a href="#block2">How to play</a></li>
   <li><a href="#block3">LeaderBoards</a></li>
@@ -319,12 +336,39 @@ span.psw {
     </ol></div>
   <img id="dinoal" src="https://firebasestorage.googleapis.com/v0/b/dinogurin.appspot.com/o/dinoAlpha.png?alt=media&token=fbdb655b-fc84-4ec5-9355-e7d695c9215d">
 	<div id="block2"> <img id="block2img" src="https://firebasestorage.googleapis.com/v0/b/dinogurin.appspot.com/o/block2.png?alt=media&token=5760ff4f-807e-4234-a8b1-2749975f1bc1"></div>
-	<div id="block3"></div>
+	<div id="block3">
+    <div id="scoreboard">
+      <div id="text1">Hall of Fame</div>
+      <div id="scoreboardz">
+      </div>
+    </div>
+  </div>
 
 
-	 <div id="playgame">
-<a href="game.html"><button style="width:auto;">Play Game</button><a>
+	<div id="playgame">
+<button onclick="window.location.href='./game.html'" style="width:auto;">Play Game</button>
 </div>
+<!-- DeadElement
+<div id="id01" class="modal">
+
+  <form class="modal-content animate" action="game.html">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+      <button type="submit">Agree</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+-->
 
 	
 	<div class="footer">
@@ -343,6 +387,8 @@ span.psw {
   <a href="https://www.facebook.com/sroravitoak" class="fa fa-facebook"></a>
   <p>&copy; 2019 มาจากการเลือกตั้ง. All rights reserved.</p>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+  <script type="text/javascript" src="scoreboard.js"></script>
 
 	<script>
 var modal = document.getElementById('id01');

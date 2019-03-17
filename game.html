@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <link rel="stylesheet" type="text/css" href="style2.css">
 	<title></title>
 </head>
 <body>
-   <section id="input">
-    <h1>Your name : <input type="text" id="users">
-    <button onclick="ready_go(); document.getElementById('input').style.display = 'none' 
-    document.getElementById('name').innerText = document.getElementById('users').value; ">click</button></h1>
+  <div id="music_board" status="off">
+    <input type="button" value="music" id="music"/>
+    <audio loop>
+      <source src="https://firebasestorage.googleapis.com/v0/b/dinogu-29338.appspot.com/o/bgm.wav?alt=media&amp;token=d7c92e20-213d-4044-8560-bad343ee5a73" type="audio/wav">
+
+    </audio>
+  </div>
+  <section id="score_push" class="push_sc" style="display: none;">
+    <div class="input">กดเพื่อเล่นใหม่ค่ะ</div>
+    <div>
+    <button onclick="ready_go();" class="input">Restart</button>
+    </div>
+    <div>
+    <button onclick="window.location.href='/index.html'" class="input">Index</button>
+    </div>
   </section>
+
+   <section id="input" class="sec">
+    <div class="input">Your name :</div>
+    <div>
+    <div id="warning"></div>
+    <input type="text" id="users" required minlength="4" maxlength="20" size="10">
+    </div>
+    <button onclick="textcheck();" class="input">start</button>
+    </section>
   <div>
   <div class="main-container">
     <div id="conl"></div>
@@ -33,12 +54,13 @@
   </div>
   <div id="name"></div>
   <div id="score">SCORE: 0</div>
-  <div id="hp">HP: 10</div>
+  <div id="hp">HP: 5</div>
   </div>
-
-
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 <script type="text/javascript" src="controll1.js"></script>
 <script type="text/javascript" src="fdrop.js"></script>
+<script type="text/javascript" src="formcheck.js"></script>
+<script type="text/javascript" src="music.js"></script>
 </body>
 
 </html>

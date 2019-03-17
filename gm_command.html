@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .botton{
+      width: 10%;
+      height: 10%;
+      font-size: 5em;
+      background: blue;
+    }
+    .botton:active{
+      border-style: inset;
+    }
+  </style>
+</head>
+<body>
+  <h1>this is leaderboard อย่า push เล่นนะ</h1>
+  <div id = "scoreboard">
+    <div id = "scoreboardz"></div>
+  </div>
+  <h1 id="score">score :0</h1>
+  name: <input type="text" name="Name" id="name" value="jame"><br>
+  <div onclick="datapush();" class="botton">Push</div>
+  <div onclick="gotdata(database);" class="botton">getdata</div>
+  <button onclick="addscore();" class="botton">add score</button>
+  <a href="./leaderboard.html">real leaderboadtest</a>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  
+  var config = {
+    apiKey: "AIzaSyCUHQjWzjaNnAWZFDESs27rEg0D1_p1nfw",
+    authDomain: "dinogu-29338.firebaseapp.com",
+    databaseURL: "https://dinogu-29338.firebaseio.com",
+    projectId: "dinogu-29338",
+    storageBucket: "dinogu-29338.appspot.com",
+    messagingSenderId: "858692298345"
+  };
+  firebase.initializeApp(config);
+  //var data = {
+  //  name: "jame",
+  //  score: 43
+  //}
+  //ref.push(data);
+  var score = 0;
+  var database = firebase.database();
+  var ref = database.ref('score');
+  ref.on('value', function(snapshot) {
+      console.log(snapshot.val());
+      scores = snapshot.val();
+      var keys = Object.keys(scores);
+      console.log(keys)
+      for (let i=0; i < keys.length; i++){
+        var k = keys[i];
+        var namez = scores[k].name;
+        var score_dis = scores[k].score;
+        console.log(namez);
+        console.log(score_dis);
+        }
+    },
+      function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+  });
+  function addscore(){
+    score += 1;
+    document.getElementById("score").innerHTML = "score "+score;
+  }
+  function datapush(){
+    gotdata(database);
+    remove_id("scoreboardz");
+    var scoreboardz = document.createElement("div");
+    scoreboardz.setAttribute("id", "scoreboardz");
+    document.getElementById("scoreboard").appendChild(scoreboardz);
+    pname = document.getElementById("name").value;
+    console.log(pname);
+    let data = {
+      name: pname,
+      score: score
+    }
+    ref.push(data);
+  }
+
+  function gotdata(database){
+    
+    ref.on('value', function(snapshot) {
+      remove_id("scoreboardz");
+      var scoreboardz = document.createElement("div");
+      scoreboardz.setAttribute("id", "scoreboardz");
+      document.getElementById("scoreboard").appendChild(scoreboardz);
+      console.log(snapshot.val());
+      scores = snapshot.val();
+      var keys = Object.keys(scores);
+      console.log(keys)
+      for (let i=0; i < keys.length; i++){
+        var k = keys[i];
+        var namez = scores[k].name;
+        var score_dis = scores[k].score;
+        console.log(namez);
+        console.log(score_dis);
+        var scoreB = document.createElement('li');
+        var t = document.createTextNode("name :"+namez+"\n    score: "+score_dis);
+        scoreB.appendChild(t);
+        document.getElementById("scoreboardz").appendChild(scoreB);
+        }
+    },
+      function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+  });
+  }
+  function remove_id(meatID){
+   var elem = document.getElementById(meatID);
+    return elem.parentElement.removeChild(elem);
+  }
+</script>
+</body>
+</html>
+

@@ -77,7 +77,7 @@ body{
   height:10%;
   left: var(--x);
   top: 90%;
-  background-image:url('dino.png');
+  background-image:url('https://firebasestorage.googleapis.com/v0/b/dinogu-29338.appspot.com/o/dino.png?alt=media&token=e29a7b65-a471-4531-b371-a3a692fc861a');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -122,7 +122,7 @@ div[display="none"]{
   height:10%;
   left: var(--x);
   top: var(--y);
-  background-image:url('meat.png');
+  background-image:url('https://firebasestorage.googleapis.com/v0/b/dinogu-29338.appspot.com/o/meat.png?alt=media&token=cd59ac1d-d6ae-414f-ab14-bfcc8d2cf708');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -156,7 +156,7 @@ div[display="none"]{
   height:10%;
   left: var(--x);
   top: var(--y);
-  background-image:url('meat.png');
+  background-image:url('https://firebasestorage.googleapis.com/v0/b/dinogu-29338.appspot.com/o/meat.png?alt=media&token=cd59ac1d-d6ae-414f-ab14-bfcc8d2cf708');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -187,7 +187,7 @@ div[display="none"]{
   position: absolute;
   display: fixed;
   z-index: 3;
-  top: 30%;
+  top: 20%;
   left: 10%;
 }
 .meteor{
@@ -196,7 +196,7 @@ div[display="none"]{
   height:10%;
   left: var(--x);
   top: var(--y);
-  background-image:url('meteor.png');
+  background-image:url('https://firebasestorage.googleapis.com/v0/b/dinogu-29338.appspot.com/o/meteor.png?alt=media&token=d73dfbbc-06d7-4281-bf89-c633c99a3cc7');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -207,17 +207,52 @@ div[display="none"]{
 }
 section{
   position:absolute;
-  background-color:white;
-  display: block;
-  width: 40%;
-  height: 20vh;
-  margin: auto;
-  top:0;
-  left:0;
-  right:0;
-  bottom:200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  justify-content: center;
+  align-content:center;
+  width: 100%;
+  height: 100vh;
   z-index:6;
+}
+.sec{
+  background-image: url("https://wallpaperaccess.com/full/207739.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter:alpha(opacity=0.6);
+  opacity: 0.6;
 }
 p{
   text-align: center;
+}
+input{
+  font-size: 2.2em;
+  overflow: visible;
+  opacity: 1;
+}
+.input{
+  font-size: 2.2em;
+  overflow: visible;
+  opacity: 1;
+}
+#warning{
+  color: red;
+}
+.push_sc{
+
+ background: hsla(0, 100%, 50%, 50%);
+}
+embed{
+  display: fixed;
+  position: absolute;
+  z-index: 7;
+  right: 0;
+}
+#music_board{
+ display: fixed;
+  position: absolute;
+  z-index: 7;
+  right: 0;
 }
