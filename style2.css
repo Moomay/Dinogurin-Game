@@ -4,15 +4,20 @@ div{
 
 body{
   margin: 0px;
+  font-family: 'Kanit', sans-serif;
 }
 
 .main-container {
     font-size: 0em;
     margin: auto;
     height: 100vh;
+    width: 100vw;
     position: relative;
-    background-color: hsl(100, 100%, 90%);
-    z-index: 2;
+    background-image: url(for1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+    
 }
 
 .content {
@@ -25,6 +30,8 @@ body{
     text-align: center;
     position: relative;
     z-index: 2;
+    opacity: 0.5;
+
 }
 
 .col {
@@ -34,6 +41,7 @@ body{
   max-width: 812px;
   height: 90vh;
   z-index: -1;
+
 }
 
 .col:nth-child(2n) {
@@ -56,6 +64,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   transition: 2s;
+
 }
 
 .col-ch:nth-child(2n) {
@@ -139,6 +148,7 @@ div[display="none"]{
   height: 100vh;
   position: absolute;
   background: none;
+
 }
 #conr{
   display: fixed;
@@ -173,6 +183,7 @@ div[display="none"]{
   z-index: 3;
   top: 10%;
   left: 10%;
+  color: white;
 }
 #name{
   font-size: 3.6em;
@@ -181,6 +192,7 @@ div[display="none"]{
   z-index: 3;
   top: 0%;
   left: 10%;
+  color: white;
 }
 #hp{
   font-size: 3.6em;
@@ -189,6 +201,7 @@ div[display="none"]{
   z-index: 3;
   top: 20%;
   left: 10%;
+  color: white;
 }
 .meteor{
   display: fixed;
@@ -222,7 +235,7 @@ section{
   background-repeat: no-repeat;
   background-position: center;
   filter:alpha(opacity=0.6);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 p{
   text-align: center;

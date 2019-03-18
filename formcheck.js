@@ -4,10 +4,10 @@ function textcheck(){
 	var namer = name.trim();
 	console.log(namer);
 	if (namer == ''){
-		document.getElementById("warning").innerText = "กรอกชื่อเถอะครับ"
+		document.getElementById("warning").innerText = "Enter your name"
 	}
-	else if (namer.length <= 3){
-		document.getElementById("warning").innerText = "ชื่อสั้นว่ะ"
+	else if (namer.length <= 2){
+		document.getElementById("warning").innerText = "too short"
 	}
 	else {
 		pname = namer;
