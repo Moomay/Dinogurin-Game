@@ -14,5 +14,6 @@ function textcheck(){
 		ready_go();
 		document.getElementById('input').style.display = 'none';
 		document.getElementById('name').innerText = document.getElementById('users').value;
+		playMusic();
 	}
 }
